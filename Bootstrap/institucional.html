@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Vincular CDN CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/estilos.css">
+    <link rel="stylesheet" href="./assets/styles/base.css">
+    <title>Veterinaria Mi Mascota</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header class="navbar navbar-expand-lg bg-info-subtle border-bottom py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="./assets/images/cat-dog.jpg" alt="Logo Veterinaria" class="logo me-3 rounded"/>
+                <div>
+                    <h1 class="h3 mb-0 text-dark">Veterinaria Mi mascota</h1>
+                    <p class="small mb-0 text-secondary">Atención las 24 hs</p>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link active fw-bold" href="institucional.html">Institucional</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <!-- Card responsiva para la información institucional -->
+        <div class="card shadow-lg border-0 rounded-4 mx-auto p-4" style="max-width: 850px; background-color: rgba(243, 243, 201, 0.85);">
+            <div class="text-center mb-4">
+                <img src="./assets/images/veterinario-de-urgencias.jpg" alt="Veterinario de urgencias" class="img-fluid rounded-3 shadow col-md-8 mx-auto">
+            </div>
+            <div class="card-body">
+                <h2 class="text-center fw-bold mb-4">¿Quiénes somos?</h2>
+                <p class="card-text">Desde nuestros inicios en el año 2006 nos dedicamos a proteger la salud y el bienestar de tus compañeros de vida a través de una medicina veterinaria de alta calidad y el buen trato que nos caracteriza.</p>
+                <p class="card-text">Nacimos con la misión de ofrecer un espacio seguro y confiable, donde cada paciente recibe una atención médica integral y personalizada. Nos especializamos en medicina preventiva, cirugias complejas, atención de urgencias, estética canina y felina. Respaldados por un equipo de profesionales apasionados en constante actualización y equipados con tecnología de vanguardia. Nos guían valores innegociables como la empatía, la honestidad y el respeto por la vida animal. Sabemos que cuando nos visites puede generar nervios tanto a ti como a tu mascota, por lo que nos esforzamos en crear un ambiente cálido, libre de estrés y agradable desde el primer momento.</p>
+                <p class="card-text">Creemos firmemente que la prevención es la clave para una vida larga y feliz. Por ello diseñamos planes de bienestar personalizados que acompañan a tu mascota en cada etapa de su vida, desde sus primeros meses.</p>
+                <p class="fw-bold mt-4 text-end">Equipo: Veterinaria Mi Mascota</p>
+            </div>
+        </div>
+        
+        <!-- Botón de retorno usando componentes nativos -->
+        <div class="text-center mt-4">
+            <a class="btn btn-primary px-4 py-2 fw-bold rounded-pill" href="index.html">Volver al inicio</a>
+        </div>
+    </main>
+
+    <footer class="bg-body-tertiary border-top py-4 mt-auto">
+        <div class="container">
+            <div class="row text-center g-3">
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Dirección</h5>
+                    <p class="mb-0">Av. Cazón 1220</p>
+                    <p class="mb-0">Concordia - Entre Ríos</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Contacto</h5>
+                    <p class="mb-0">11 4545-4545</p>
+                    <p class="mb-0">veterinariamimascota@gmail.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Horario</h5>
+                    <p class="mb-0">Consultas programadas: Lunes a viernes 8:00 a 19:00 hs</p>
+                    <p class="mb-0">Urgencias: las 24 hs</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/estilos.css" >
+    <title>Contacto - Veterinaria Mi Mascota</title>
+</head>
+<body>
+    <header>
+        <div class="marca">
+            <img src="./assets/images/cat-dog.jpg" alt="Logo Veterinaria" class="logo"/>
+            <div class="texto-marca">
+                <h1>Veterinaria Mi Mascota</h1>
+                <p>Atención las 24 hs</p>
+            </div>
+        </div>
+        
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="contacto.html">Contacto</a>
+                </li>
+                <li>
+                    <a href="institucional.html">Institucional</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+   
+    <main>
+        <div class="contacto">
+            <section>
+                <h1>Contactate con nosotros</h1>
+                <p>¿Tenés alguna duda o consulta sobre nuestros servicios? Ponete en contacto
+                    con nuestro equipo veterinario.
+                </p>
+            </section>
+
+            
+            <section class="form-box">
+                <h3>Envíanos tu consulta</h3>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo:</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escriba su mensaje..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                </form>
+            </section>
+
+            <section class="info-contacto">
+                <h2>Información de contacto</h2>
+                <ul>
+                    <li>Dirección: Av. Cazón 22222</li>
+                    <li>Teléfono: +54 11 4545-4545</li>
+                    <li>Correo: veterinariamimascota@gmail.com</li>
+                    <li>Consultas programadas: Lunes a viernes 8:00 a 19:00 hs</li>
+                    <li>Urgencias: las 24 hs, los 7 días de la semana</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p> © 2026 Veterinaria Mi Mascota </p>
+        <p>Av. Cazón 1220-Concordia-Entre Ríos</p>
+    </footer>
+</body>
+</html>
