@@ -1,0 +1,132 @@
+<div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="./assets/images/carlos.jpg" class="card-img-top object-fit-cover" height="200" alt="Carlos Gómez">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Carlos Gómez</h5>
+                            <p class="card-text text-muted mb-2">Consulta general / Chequeo</p>
+                            <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success fs-6">$ 12.000</span>
+                                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalCarlos">Ver Detalle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="./assets/images/maria.jpg" class="card-img-top object-fit-cover" height="200" alt="María Gonzalez">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">María Gonzalez</h5>
+                            <p class="card-text text-muted mb-2">Clínica General</p>
+                            <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success fs-6">$ 15.000</span>
+                                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMaria">Ver Detalle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="./assets/images/julio.jpg" class="card-img-top object-fit-cover" height="200" alt="Julio Martínez">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Julio Martínez</h5>
+                            <p class="card-text text-muted mb-2">Cirugía y Traumatología</p>
+                            <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success fs-6">$ 22.000</span>
+                                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalJulio">Ver Detalle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="./assets/images/sofia.jpg" class="card-img-top object-fit-cover" height="200" alt="Sofía Lopez">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Sofía Lopez</h5>
+                            <p class="card-text text-muted mb-2">Dermatología</p>
+                            <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success fs-6">$ 18.000</span>
+                                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalSofia">Ver Detalle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="modalCarlos" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold">Dr. Carlos Gómez</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Especialidad:</strong> Consulta general y chequeos preventivos.</p>
+                        <p><strong>Días de atención:</strong> Lunes a Miércoles de 08:00 a 14:00 hs.</p>
+                        <p><strong>Costo de consulta:</strong> $ 12.000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalMaria" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold">Dra. María Gonzalez</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Especialidad:</strong> Clínica General y Vacunación.</p>
+                        <p><strong>Días de atención:</strong> Martes a Viernes de 09:00 a 16:00 hs.</p>
+                        <p><strong>Costo de consulta:</strong> $ 15.000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalJulio" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold">Dr. Julio Martínez</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Especialidad:</strong> Cirugía general y Traumatología.</p>
+                        <p><strong>Días de atención:</strong> Lunes, Miércoles y Viernes de 14:00 a 20:00 hs.</p>
+                        <p><strong>Costo de consulta:</strong> $ 22.000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalSofia" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold">Dra. Sofía Lopez</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Especialidad:</strong> Dermatología y Alergias.</p>
+                        <p><strong>Días de atención:</strong> Jueves y Sábados de 10:00 a 15:00 hs.</p>
+                        <p><strong>Costo de consulta:</strong> $ 18.000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+

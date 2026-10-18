@@ -1,0 +1,32 @@
+/* Selector universal */
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Bold.ttf");
+    font-weight: 700 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+    font-weight: 400 600;
+    font-style: normal;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-image: url("../images/gato-perro.avif");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* NUEVO BOOTSTRAP: 
+   Las reglas de layout para #hero, #profesionales, table, .contacto, 
+   .form-box, .institucional-info y .btn-submit fueron reemplazadas 
+   por utilidades de Grid y componentes nativos (cards, tables, form-control, buttons).
+*/

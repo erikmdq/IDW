@@ -1,0 +1,9 @@
+/* NUEVO BOOTSTRAP: Se eliminan las reglas de header, menu y footer nativos */
+/* únicamente se preservan ajustadores específicos */
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+}

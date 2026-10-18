@@ -2,20 +2,20 @@
  * index.js - Renderizado dinámico del Catálogo de Profesionales en la portada (index.html).
  * 
  * Este script:
- * 1. Lee la clave 'veterinarios' desde LocalStorage.
- * 2. Si no existen datos iniciales, precarga un conjunto de veterinarios semilla por defecto.
- * 3. Genera dinámicamente las tarjetas (Cards) y sus respectivos Modales de detalles en Bootstrap 5.
+ * - Lee la clave 'veterinarios' desde LocalStorage.
+ * - Si no existen datos iniciales, precarga un conjunto de veterinarios por defecto.
+ * - Genera dinámicamente la lista de veterinarios en Bootstrap 5.
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-    const STORAGE_KEY = 'veterinarios';
+document.addEventListener('DOMContentLoaded', function() {
+    const CLAVE = 'veterinarios';
     const contenedorCards = document.getElementById('contenedor-profesionales');
     const contenedorModales = document.getElementById('contenedor-modales');
 
     if (!contenedorCards) return;
 
-    // Datos por defecto (Semilla) si LocalStorage está vacío
-    const profesionalesSemilla = [
+    // Datos por defecto si LocalStorage está vacío
+    const profesionalesPorDefecto = [
         {
             idVeterinario: 'vet-carlos-gomez',
             matricula: 1001,
@@ -55,13 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     /**
-     * Obtiene los veterinarios guardados en LocalStorage o inicializa la semilla.
+     * Obtiene los veterinarios guardados en LocalStorage o inicializa por defecto.
      */
     function cargarProfesionales() {
-        const datos = localStorage.getItem(STORAGE_KEY);
+        const datos = localStorage.getItem(CLAVE);
         if (!datos || JSON.parse(datos).length === 0) {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(profesionalesSemilla));
-            return profesionalesSemilla;
+            localStorage.setItem(CLAVE, JSON.stringify(profesionalesPorDefecto));
+            return profesionalesPorDefecto;
         }
         return JSON.parse(datos);
     }
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lista.forEach((pro, index) => {
             const modalId = `modalVet_${index}`;
 
-            // 1. Generación de la Card en la grilla
+            // 1. Generación de la grilla
             const col = document.createElement('div');
             col.className = 'col-12 col-md-6 col-lg-3';
             col.innerHTML = `
