@@ -1,112 +1,109 @@
-// 1. Selección de elementos HTML
-const form = document.getElementById('form-veterinario');
-const inputMatricula = document.getElementById('matricula');
-const inputNombre = document.getElementById('nombre');
-const selectEspecializacion = document.getElementById('especializacion');
-const inputValorConsulta = document.getElementById('valorConsulta');
-const inputPosicion = document.getElementById('posicion-editar');
+// 1. Selección de elementos del HTML
+var form = document.getElementById('form-veterinario');
+var inputMatricula = document.getElementById('matricula');
+var inputNombre = document.getElementById('nombre');
+var selectEspecializacion = document.getElementById('especializacion');
+var inputValorConsulta = document.getElementById('valorConsulta');
+var inputPosicion = document.getElementById('posicion-editar');
 
-const tituloForm = document.getElementById('titulo-form');
-const btnGuardar = document.getElementById('btn-guardar');
-const btnCancelar = document.getElementById('btn-cancelar');
-const tablaBody = document.getElementById('tabla-body');
+var tituloForm = document.getElementById('titulo-form');
+var btnGuardar = document.getElementById('btn-guardar');
+var btnCancelar = document.getElementById('btn-cancelar');
+var tablaBody = document.getElementById('tabla-body');
 
-// 2. Arreglo principal de datos
-let veterinarios = [];
+// 2. Arreglo principal para guardar la lista
+var veterinarios = [];
 
-// 3. Función para cargar datos de LocalStorage
+// 3. Cargar datos guardados en el navegador
 function cargarDatos() {
-    const datosGuardados = localStorage.getItem('veterinarios');
+    var datosGuardados = localStorage.getItem('veterinarios');
     if (datosGuardados !== null) {
         veterinarios = JSON.parse(datosGuardados);
     }
     mostrarTabla();
 }
 
-// 4. Función para guardar en LocalStorage
+// 4. Guardar datos en el navegador
 function guardarEnLocalStorage() {
     localStorage.setItem('veterinarios', JSON.stringify(veterinarios));
 }
 
-// 5. Función para mostrar la tabla en pantalla
+// 5. Dibujar la tabla en pantalla
 function mostrarTabla() {
-    tablaBody.innerHTML = ''; // Limpiar la tabla antes de volver a dibujar
+    tablaBody.innerHTML = '';
 
     if (veterinarios.length === 0) {
         tablaBody.innerHTML = '<tr><td colspan="5" class="text-center text-muted">No hay veterinarios registrados.</td></tr>';
         return;
     }
 
-    veterinarios.fo0rEach((vet, index) => {
-        tablaBody.innerHTML += `
-            <tr>
-                <td>${vet.matricula}</td>
-                <td>${vet.nombre}</td>
-                <td>${vet.especializacion}</td>
-                <td>$${vet.valorConsulta}</td>
-                <td>
-                    <button class="btn btn-warning btn-sm" onclick="prepararEditar(${index})">Editar</button>
-                    <button class="btn btn-danger btn-sm" onclick="eliminarVeterinario(${index})">Eliminar</button>
-                </td>
-            </tr>
-        `;
+    veterinarios.forEach(function(vet, index) {
+        tablaBody.innerHTML += '<tr>' +
+            '<td>' + vet.matricula + '</td>' +
+            '<td>' + vet.nombre + '</td>' +
+            '<td>' + vet.especializacion + '</td>' +
+            '<td>$' + vet.valorConsulta + '</td>' +
+            '<td>' +
+                '<button class="btn btn-warning btn-sm me-1" onclick="prepararEditar(' + index + ')">Editar</button>' +
+                '<button class="btn btn-danger btn-sm" onclick="eliminarVeterinario(' + index + ')">Eliminar</button>' +
+            '</td>' +
+        '</tr>';
     });
 }
 
-// 6. Evento al enviar el formulario (Guardar / Editar)
-form.addEventListener('submit', (e) => {
-    e.preventDefault(); // Evitar que la página se recargue
+// 6. Función para agregar o modificar un veterinario
+function guardarVeterinario(e) {
+    e.preventDefault(); // Evita que el formulario recargue la página
 
-    const posicion = parseInt(inputPosicion.value);
+    var posicion = parseInt(inputPosicion.value);
 
-    // Crear el objeto con los datos ingresados
-    const nuevoVeterinario = {
+    var nuevoVeterinario = {
         matricula: inputMatricula.value,
         nombre: inputNombre.value,
         especializacion: selectEspecializacion.value,
         valorConsulta: inputValorConsulta.value,
-        imagen: './assets/images/cat-dog.jpg' // Imagen por defecto para el catálogo
+        imagen: './assets/images/carlos.jpg'
     };
 
     if (posicion === -1) {
-        // Registro nuevo
+        // Si la posición es -1, es un registro nuevo
         veterinarios.push(nuevoVeterinario);
     } else {
-        // Modificación de registro existente
+        // Si no es -1, reemplazamos en la posición que estamos editando
         veterinarios[posicion] = nuevoVeterinario;
     }
 
     guardarEnLocalStorage();
     mostrarTabla();
     limpiarFormulario();
-});
+}
 
-// 7. Cargar los datos en el formulario para editar
+// 7. Cargar datos en el formulario para editar
 function prepararEditar(index) {
-    const vet = veterinarios[index];
+    var vet = veterinarios[index];
 
     inputMatricula.value = vet.matricula;
     inputNombre.value = vet.nombre;
     selectEspecializacion.value = vet.especializacion;
     inputValorConsulta.value = vet.valorConsulta;
 
-    inputPosicion.value = index; // Guardamos el índice que estamos editando
+    inputPosicion.value = index;
     tituloForm.textContent = 'Editar Veterinario';
     btnGuardar.textContent = 'Guardar Cambios';
     btnCancelar.classList.remove('d-none');
 }
 
-// 8. Eliminar un veterinario con confirmación simple
+// 8. Eliminar un veterinario del arreglo
 function eliminarVeterinario(index) {
-    const confirmacion = confirm('¿Desea eliminar este veterinario?');
+    var confirmacion = confirm('¿Desea eliminar este veterinario?');
     if (confirmacion) {
-        veterinarios.splice(index, 1); // Quitar el elemento del arreglo
+        veterinarios.splice(index, 1);
         guardarEnLocalStorage();
         mostrarTabla();
     }
 }
 
-// 9. Resetear el formulario al estado inicial
+// 9. Dejar el formulario como al principio
 function limpiarFormulario() {
     form.reset();
     inputPosicion.value = '-1';
@@ -115,7 +112,9 @@ function limpiarFormulario() {
     btnCancelar.classList.add('d-none');
 }
 
+// Asignación de eventos
+form.addEventListener('submit', guardarVeterinario);
 btnCancelar.addEventListener('click', limpiarFormulario);
 
-// Iniciar la carga al abrir la página
+// Ejecutar la lectura inicial de datos
 cargarDatos();
