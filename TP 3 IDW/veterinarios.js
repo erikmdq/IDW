@@ -1,4 +1,4 @@
-// 1. Selección de elementos del HTML
+//Selección de elementos HTML
 var form = document.getElementById('form-veterinario');
 var inputMatricula = document.getElementById('matricula');
 var inputNombre = document.getElementById('nombre');
@@ -11,10 +11,10 @@ var btnGuardar = document.getElementById('btn-guardar');
 var btnCancelar = document.getElementById('btn-cancelar');
 var tablaBody = document.getElementById('tabla-body');
 
-// 2. Arreglo principal para guardar la lista
+//Arreglo principal para guardar la lista
 var veterinarios = [];
 
-// 3. Cargar datos guardados en el navegador
+//Cargar datos guardados en el navegador
 function cargarDatos() {
     var datosGuardados = localStorage.getItem('veterinarios');
     if (datosGuardados !== null) {
@@ -23,12 +23,38 @@ function cargarDatos() {
     mostrarTabla();
 }
 
-// 4. Guardar datos en el navegador
+//Guardar datos en el navegador
 function guardarEnLocalStorage() {
     localStorage.setItem('veterinarios', JSON.stringify(veterinarios));
 }
 
-// 5. Dibujar la tabla en pantalla
+function formatoMoneda(valor) {
+    var numero = parseFloat(valor);
+
+    return "$ " + numero.toLocaleString('es-AR', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
+
+//Generar un id nuevo
+function obtenerNuevoId() {
+    if (veterinarios.length === 0) {
+        return 1001;
+    }
+
+    var idMaximo = 0;
+    veterinarios.forEach(function(vet) {
+        var idActual = parseInt(vet.idVeterinario);
+        if (idActual > idMaximo) {
+            idMaximo = idActual;
+        }
+    });
+
+    return idMaximo + 1;
+}
+
+//Dibujar la tabla en pantalla
 function mostrarTabla() {
     tablaBody.innerHTML = '';
 
@@ -42,7 +68,7 @@ function mostrarTabla() {
             '<td>' + vet.matricula + '</td>' +
             '<td>' + vet.nombre + '</td>' +
             '<td>' + vet.especializacion + '</td>' +
-            '<td>$' + vet.valorConsulta + '</td>' +
+            '<td>' + formatoMoneda(vet.valorConsulta) + '</td>' +
             '<td>' +
                 '<button class="btn btn-warning btn-sm me-1" onclick="prepararEditar(' + index + ')">Editar</button>' +
                 '<button class="btn btn-danger btn-sm" onclick="eliminarVeterinario(' + index + ')">Eliminar</button>' +
@@ -51,18 +77,19 @@ function mostrarTabla() {
     });
 }
 
-// 6. Función para agregar o modificar un veterinario
+//Función para agregar o modificar un veterinario
 function guardarVeterinario(e) {
     e.preventDefault(); // Evita que el formulario recargue la página
 
     var posicion = parseInt(inputPosicion.value);
 
     var nuevoVeterinario = {
+        idVet: obtenerNuevoId(),
         matricula: inputMatricula.value,
         nombre: inputNombre.value,
         especializacion: selectEspecializacion.value,
         valorConsulta: inputValorConsulta.value,
-        imagen: './assets/images/carlos.jpg'
+        imagen: './assets/images/cat-dog.jpg'
     };
 
     if (posicion === -1) {
@@ -78,7 +105,7 @@ function guardarVeterinario(e) {
     limpiarFormulario();
 }
 
-// 7. Cargar datos en el formulario para editar
+//Cargar datos en el formulario para editar
 function prepararEditar(index) {
     var vet = veterinarios[index];
 
@@ -93,7 +120,7 @@ function prepararEditar(index) {
     btnCancelar.classList.remove('d-none');
 }
 
-// 8. Eliminar un veterinario del arreglo
+//Eliminar un veterinario del arreglo
 function eliminarVeterinario(index) {
     var confirmacion = confirm('¿Desea eliminar este veterinario?');
     if (confirmacion) {
@@ -103,7 +130,7 @@ function eliminarVeterinario(index) {
     }
 }
 
-// 9. Dejar el formulario como al principio
+//Dejar el formulario como al principio
 function limpiarFormulario() {
     form.reset();
     inputPosicion.value = '-1';
@@ -112,7 +139,7 @@ function limpiarFormulario() {
     btnCancelar.classList.add('d-none');
 }
 
-// Asignación de eventos
+//Asignación de eventos
 form.addEventListener('submit', guardarVeterinario);
 btnCancelar.addEventListener('click', limpiarFormulario);
 

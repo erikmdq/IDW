@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria Mi Mascota - Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+<body>
+
+    <header class="sticky-top bg-body-tertiary shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                    <img src="./assets/images/cat-dog.jpg" alt="Logo Veterinaria" width="45" height="45" class="rounded-circle border border-light">
+                    <div>
+                        <span class="fw-bold d-block lh-1">Veterinaria Mi Mascota</span>
+                        <small class="fs-7 text-muted fw-normal">Atención las 24 hs</small>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto fs-5">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="institucional.html">Institucional</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-4">
+        <section id="hero" class="container my-4">
+            <div class="row align-items-center bg-body-secondary p-4 p-md-5 rounded-4 shadow-sm">
+                <div class="col-lg-7">
+                    <h1 class="display-5 fw-bold text-primary mb-3">Bienvenidos a Veterinaria Mi Mascota</h1>
+                    <p class="lead text-secondary">
+                        En Veterinaria Mi Mascota, estamos comprometidos con la salud y el bienestar de tu mascota.
+                        Ofrecemos atención Veterinaria las 24 hs del día, los 7 días de la semana.
+                    </p>
+                    <a href="contacto.html" class="btn btn-primary btn-lg mt-2">Sacar Turno u Urgencias</a>
+                </div>
+                <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                    <img src="./assets/images/vet-mi-mascota.jpeg" alt="Veterinaria" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </section>
+
+        <section id="profesionales" class="container my-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-6">Nuestros Profesionales</h2>
+                <p class="text-muted">Conoce al equipo médico encargado de la salud de tu compañero</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="./assets/images/carlos.jpg" class="card-img-top object-fit-cover" height="200" alt="Carlos Gómez">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Carlos Gómez</h5>
+                            <p class="card-text text-muted mb-2">Consulta general / Chequeo</p>
+                            <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success fs-6">$ 12.000</span>
+                                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalCarlos">Ver Detalle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="./assets/images/maria.jpg" class="card-img-top object-fit-cover" height="200" alt="María Gonzalez">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">María Gonzalez</h5>
+                            <p class="card-text text-muted mb-2">Clínica General</p>
+                            <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success fs-6">$ 15.000</span>
+                                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMaria">Ver Detalle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="./assets/images/julio.jpg" class="card-img-top object-fit-cover" height="200" alt="Julio Martínez">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Julio Martínez</h5>
+                            <p class="card-text text-muted mb-2">Cirugía y Traumatología</p>
+                            <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success fs-6">$ 22.000</span>
+                                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalJulio">Ver Detalle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="./assets/images/sofia.jpg" class="card-img-top object-fit-cover" height="200" alt="Sofía Lopez">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Sofía Lopez</h5>
+                            <p class="card-text text-muted mb-2">Dermatología</p>
+                            <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success fs-6">$ 18.000</span>
+                                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalSofia">Ver Detalle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal fade" id="modalCarlos" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold">Dr. Carlos Gómez</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Especialidad:</strong> Consulta general y chequeos preventivos.</p>
+                        <p><strong>Días de atención:</strong> Lunes a Miércoles de 08:00 a 14:00 hs.</p>
+                        <p><strong>Costo de consulta:</strong> $ 12.000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalMaria" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold">Dra. María Gonzalez</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Especialidad:</strong> Clínica General y Vacunación.</p>
+                        <p><strong>Días de atención:</strong> Martes a Viernes de 09:00 a 16:00 hs.</p>
+                        <p><strong>Costo de consulta:</strong> $ 15.000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalJulio" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold">Dr. Julio Martínez</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Especialidad:</strong> Cirugía general y Traumatología.</p>
+                        <p><strong>Días de atención:</strong> Lunes, Miércoles y Viernes de 14:00 a 20:00 hs.</p>
+                        <p><strong>Costo de consulta:</strong> $ 22.000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalSofia" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold">Dra. Sofía Lopez</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Especialidad:</strong> Dermatología y Alergias.</p>
+                        <p><strong>Días de atención:</strong> Jueves y Sábados de 10:00 a 15:00 hs.</p>
+                        <p><strong>Costo de consulta:</strong> $ 18.000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5>Dirección</h5>
+                    <p class="m-0">Av. Cazón 1220</p>
+                    <p class="m-0">Concordia - Entre Ríos</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p class="m-0">Teléfono: 11 4545-4545</p>
+                    <p class="m-0">Correo: veterinariamimascota@gmail.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Horarios</h5>
+                    <p class="m-0">Consultas: Lun a Vie 8:00 a 19:00 hs</p>
+                    <p class="m-0 text-warning fw-bold">Urgencias: 24 hs</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
